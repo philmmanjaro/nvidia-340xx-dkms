@@ -10,7 +10,7 @@ pkgrel=1
 pkgdesc="NVIDIA drivers for linux, 340xx legacy branch"
 arch=('x86_64')
 url="https://www.nvidia.com/"
-makedepends=("nvidia-340xx-utils=${pkgver}" 'linux>=5.5' 'linux-headers>=5.5')
+makedepends=("nvidia-340xx-utils=${pkgver}" 'linux>=5.4' 'linux-headers>=5.4')
 conflicts=('nvidia')
 license=('custom')
 options=(!strip)
@@ -41,7 +41,7 @@ prepare() {
 
 package_nvidia-340xx-dkms() {
     pkgdesc="NVIDIA driver sources for linux, 340xx legacy branch"
-    depends=('dkms' "nvidia-340xx-utils=$pkgver" 'libgl')
+    depends=('dkms' "nvidia-340xx-utils=$pkgver" 'libgl' 'linux>=5.4')
     optdepends=('linux-headers: Build the module for Manjaro kernel')
     provides=("nvidia-340xx=$pkgver")
     conflicts+=('nvidia-340xx')
